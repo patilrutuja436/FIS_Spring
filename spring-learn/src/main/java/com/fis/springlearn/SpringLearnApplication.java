@@ -26,8 +26,9 @@ public class SpringLearnApplication {
 
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("country.xml");
 		Country country = context.getBean("country", Country.class);
-		LOGGER.debug("Country : {}", country.toString());
-		context.close();
+		Country anotherCountry = context.getBean("country", Country.class);
+		LOGGER.debug("Country : {}", country);
+		LOGGER.debug("Country : {}", anotherCountry);
 	}
 
 	static void displayDate() {
