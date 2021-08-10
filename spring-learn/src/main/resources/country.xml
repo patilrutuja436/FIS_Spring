@@ -9,6 +9,36 @@
 		<property name="code" value="IN" />
 		<property name="name" value="India" />
 	</bean>
-
+	<bean id="in" class="com.fis.springlearn.Country" scope="prototype">
+		<property name="code" value="IN" />
+		<property name="name" value="India" />
+	</bean>
+	<bean id="us" class="com.fis.springlearn.Country" scope="prototype">
+		<property name="code" value="US" />
+		<property name="name" value="United States" />
+	</bean>
+	<bean id="jp" class="com.fis.springlearn.Country" scope="prototype">
+		<property name="code" value="JP" />
+		<property name="name" value="JAPAN" />
+	</bean>
+	<bean id="de" class="com.fis.springlearn.Country" scope="prototype">
+		<property name="code" value="DE" />
+		<property name="name" value="Germany" />
+	</bean>
+<!-- ArrayList<Country> countryList = new ArrayList<>() -->
+	<!-- countryList.add(in) -->
+	<!-- countryList.add(us) -->
+	<!-- countryList.add(de) -->
+	<!-- countryList.add(jp) -->
+	<bean id="countryList" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<ref bean="in"></ref>
+				<ref bean="us"></ref>
+				<ref bean="de"></ref>
+				<ref bean="jp"></ref>
+			</list>
+		</constructor-arg>
+	</bean>
 
 </beans>

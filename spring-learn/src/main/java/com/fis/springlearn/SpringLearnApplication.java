@@ -2,6 +2,7 @@ package com.fis.springlearn;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,7 +20,18 @@ public class SpringLearnApplication {
 //		SpringApplication.run(SpringLearnApplication.class, args);
 
 		// displayDate();
-		displayCountry();
+		// displayCountry();
+		displayCountries();
+	}
+
+	static void displayCountries() {
+		LOGGER.info("Start");
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("country.xml");
+		ArrayList<Country> country = context.getBean("countryList", ArrayList.class);
+		
+		LOGGER.debug("Countries : {}", country);
+		context.close();
+		LOGGER.info("Start");
 	}
 
 	static void displayCountry() {
@@ -29,6 +41,7 @@ public class SpringLearnApplication {
 		Country anotherCountry = context.getBean("country", Country.class);
 		LOGGER.debug("Country : {}", country);
 		LOGGER.debug("Country : {}", anotherCountry);
+		context.close();
 	}
 
 	static void displayDate() {
