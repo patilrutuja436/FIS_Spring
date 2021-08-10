@@ -31,7 +31,7 @@ public class SpringLearnApplication {
 		
 		LOGGER.debug("Countries : {}", country);
 		context.close();
-		LOGGER.info("Start");
+		LOGGER.info("End");
 	}
 
 	static void displayCountry() {
