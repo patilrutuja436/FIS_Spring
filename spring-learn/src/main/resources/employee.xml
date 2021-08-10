@@ -34,7 +34,17 @@
 		<property name="id" value="1" />
 		<property name="name" value="Payroll" />
 	</bean>
+	<bean id="dao" class="com.fis.springlearn.EmployeeDao.EmployeeDao">
 
+	</bean>
+	<bean id="service"
+		class="com.fis.springlearn.EmployeeService.EmployeeService">
+		<property name="employeeDao" ref="dao"></property>
+	</bean>
+	<bean id="controller"
+		class="com.fis.springlearn.EmployeeController.EmployeeController">
+		<property name="employeeService" ref="service"></property>
+	</bean>
 
 
 </beans>

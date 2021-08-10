@@ -4,14 +4,14 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.fis.springlearn.EmployeeController.EmployeeController;
 import com.fis.springlearn.bean.Employee;
 
 @SpringBootApplication
@@ -24,7 +24,15 @@ public class SpringLearnApplication {
 		// displayDate();
 		// displayCountry();
 		//displayCountries();
-		displayEmployee();
+		//displayEmployee();
+		getEmployeeController();
+	}
+	static void getEmployeeController() {
+		LOGGER.info("START");
+		ApplicationContext context = new ClassPathXmlApplicationContext("employee.xml");
+		EmployeeController employeeController = context.getBean("controller", EmployeeController.class);
+		LOGGER.debug("EmployeeController : {}", employeeController);
+		LOGGER.info("END");
 	}
 	static void displayEmployee(){
 		LOGGER.info("Start");
