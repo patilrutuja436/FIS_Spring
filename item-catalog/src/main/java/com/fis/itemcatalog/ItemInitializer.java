@@ -13,7 +13,7 @@ public class ItemInitializer implements CommandLineRunner {
     ItemInitializer(ItemRepository itemRepository) {
         this.itemRepository = itemRepository;
     }
-
+//list of Items
     @Override
     public void run(String... args) throws Exception {
         Stream.of("Lining", "PUMA", "Bad Boy", "Air Jordan", "Nike", "Adidas", "Reebok")
